@@ -62,7 +62,7 @@ jobs:
         working-directory: yi
         run: "${{ steps.detect.outputs.install }}"
 
-      - name: Build (Nuxt preset: github_pages)
+      - name: Build
         working-directory: yi
         env:
           NUXT_APP_BASE_URL: /
