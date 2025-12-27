@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>High performance Digital Clock</title>
+    <link rel="icon" href="digital clock.ico" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+        }
+        
+        #clock {
+            font-size: 244px;
+            color: white;
+            position: absolute;
+            left: 16.5%;
+            top: 30%;
+            font-family: cursive;
+        }
+
+        .iframe iframe {
+            width: 550px;
+        }
+
+        .iframe {
+            text-align: center;
+        }
+
+        .timer iframe {
+            /*position:absolute(位置決め)*/
+            position: absolute;
+            top:110%;
+            left: 15%;
+        }
+
+        .timer iframe {
+            /*大きさ調整*/
+            height: 300px;
+        }
+
+        .SW {
+            position: absolute;
+            top: 115%;
+            right: 15%;
+        }
+
+        .SW iframe {
+            height: 170px;
+        }
+
+        .js p {
+            position: absolute;
+            top: 84%;
+            left: 44%;
+            color: white;
+            font-family: cursive;
+        }
+
+        .js h2 {
+            position: absolute;
+            top: 87%;
+            left: 46%;
+            color: white;
+            font-family: cursive;
+        }
+
+        .btn {
+            position: absolute;
+            top: 96%;
+            left: 46.5%;
+        }
+
+        .btn button {
+            background-color: gray;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="iframe"><iframe src="calender.html" frameborder="0" scrolling="no"></iframe></div>
+    <div id="clock"></div>
+    <div class="js"><p>This clock is powered by</p><h2>Javascript</h2></div>
+    <br>
+    <div class="timer"><iframe src="timer.html" frameborder="0" scrolling="no"></iframe></div>
+    <div class="SW"><iframe src="stop_watch.html" frameborder="0" scrolling="no"></iframe></div>
+    <div class="btn"><button id="btn1">注意事項を表示</button></div>
+
+    <script>
+        const btn1 = document.getElementById('btn1');
+        btn1.addEventListener('click', () => {
+            var note ="曜日や日にちが異なる場合、リフレッシュしてください。\nバグってしまった場合、リフレッシュすると改善する場合があります。"
+            alert(note)
+        })
+    </script>
+
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            var time = hours + ":" + minutes + ":" + seconds;
+
+            document.getElementById("clock").innerHTML = time;
+
+            setTimeout(updateClock, 1000);
+        }
+
+        updateClock();
+    </script>
+</body>
+</html>

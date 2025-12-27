@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScriptカレンダー</title>
+  <style>
+    body {
+      background-color: black;
+    }
+
+    #calendar {
+        font-size: 64px;
+        font-family: cursive;
+        color: white;
+    }
+  </style>
+</head>
+<body>
+  <div id="calendar"></div>
+  <script>
+    // ここにJavaScriptを記述
+    // 現在の年月日と曜日を取得
+    let date = new Date();
+    let year = date.getFullYear();
+    let month = date.getMonth() + 1;
+    let day = date.getDate();
+    let week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+    let weekday = week[date.getDay()];
+
+    // カレンダーの要素を取得
+    let calendar = document.getElementById("calendar");
+
+    // カレンダーのテキストを作成
+    let text = `${year}/${month}/${day}/${weekday}`;
+    calendar.textContent = text;
+  </script>
+</body>
+</html>

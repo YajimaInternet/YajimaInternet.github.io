@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Stopwatch</title>
+    <style>
+        /* スタイリングは必要に応じて追加してください */
+        body {
+            background-color: black;
+        }
+        h1 {
+            color: white;
+        }
+        .stopwatch_wrapper {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .time {
+            font-size: 24px;
+            margin: 0 10px;
+            color: white;
+        }
+        .button {
+            background-color: #0074D9;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .button:disabled {
+            background-color: #A9A9A9;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>ストップウォッチ</h1>
+    <div class="stopwatch_wrapper">
+        <div class="display">
+            <span id="minutes" class="time">00</span>
+            <span id="seconds" class="time">00</span>
+            <span id="milli_seconds" class="time">000</span>
+        </div>
+        <div class="buttons">
+            <button class="button" id="start">start</button>
+            <button class="button" id="stop" disabled>stop</button>
+            <button class="button" id="reset" disabled>reset</button>
+        </div>
+    </div>
+
+    <script>
+        const minutes = document.getElementById('minutes');
+        const seconds = document.getElementById('seconds');
+        const milli_seconds = document.getElementById('milli_seconds');
+        const start = document.getElementById('start');
+        const stop = document.getElementById('stop');
+        const reset = document.getElementById('reset');
+        let timer_id;
+        let stopwatch_time = 0;
+        let press_start_time = 0;
+        let press_stop_time = 0;
+        let past_moving_time = 0;
+
+        start.addEventListener('click', () => {
+            press_start_time = new Date().getTime();
+            timer_id = setInterval(() => {
+                stopwatch_time = new Date().getTime() - press_start_time + past_moving_time;
+                const time_milli_seconds = `00${Math.floor(stopwatch_time % 1000)}`.slice(-3);
+                const time_seconds = `0${Math.floor((stopwatch_time / 1000) % 60)}`.slice(-2);
+                const time_minutes = `0${Math.floor(stopwatch_time / 1000 / 60) % 60}`.slice(-2);
+
+                minutes.innerHTML = time_minutes;
+                seconds.innerHTML = time_seconds;
+                milli_seconds.innerHTML = time_milli_seconds;
+            }, 1);
+            start.disabled = true;
+            stop.disabled = false;
+            reset.disabled = false;
+        });
+
+        stop.addEventListener('click', () => {
+            clearInterval(timer_id);
+            press_stop_time = new Date().getTime();
+            past_moving_time += press_stop_time - press_start_time;
+            start.disabled = false;
+            stop.disabled = true;
+        });
+
+        reset.addEventListener('click', () => {
+            clearInterval(timer_id);
+            minutes.innerHTML = '00';
+            seconds.innerHTML = '00';
+            milli_seconds.innerHTML = '000';
+            stopwatch_time = 0;
+            past_moving_time = 0;
+            start.disabled = false;
+            stop.disabled = true;
+            reset.disabled = true;
+        });
+    </script>
+</body>
+</html>

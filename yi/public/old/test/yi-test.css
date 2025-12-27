@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", sans-serif;
+  background-color: #ededed; /* 明るめグレー */
+  color: #222; /* ダークグレー */
+  line-height: 1.6;
+}
+header {
+  background-color: #888; /* ミディアムグレー */
+  color: #222;
+  padding: 30px 20px;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.2em;
+}
+header p {
+  margin: 8px 0 0;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+nav.global-nav {
+  background: #b0b0b0;  /* グレー */
+  color: #222;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  font-weight: 600;
+  font-size: 1.15em;
+  border-bottom: 2px solid #888;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+nav.global-nav a {
+  color: #222;
+  text-decoration: none;
+  padding: 18px 0;
+  position: relative;
+  transition: color 0.25s;
+  min-width: 80px; /* 横幅を確保して見やすく */
+  display: inline-block; /* 横並び＆スクロール対応 */
+}
+nav.global-nav a:hover,
+nav.global-nav a:focus {
+  color: #444; /* 濃い目のグレー */
+}
+nav.global-nav a.active {
+  border-bottom: 3px solid #555;
+  color: #555;
+}
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+section {
+  margin-bottom: 50px;
+}
+h2 {
+  border-bottom: 2px solid #888; /* グレー */
+  padding-bottom: 6px;
+  font-weight: 600;
+  font-size: 1.75em;
+}
+p {
+  margin-top: 15px;
+  font-size: 1.1em;
+}
+a.button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #888;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+a.button:hover {
+  background-color: #555;
+}
+footer {
+  background-color: #444;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9em;
+}
+main p {
+  margin-top: 15px;
+  font-size: 1.3em;
+}
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem 0;
+}
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  color: #222;
+  transition: all 0.3s ease;
+}
+.footer-social a:hover {
+  background: #888;
+  color: #fff;
+  transform: translateY(-3px);
+}
+/* --- 追記：スマホ対応（レスポンシブ化）--- */
+@media (max-width: 700px) {
+  nav.global-nav {
+    gap: 8px;
+    font-size: 0.9em;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  nav.global-nav a {
+    padding: 10px 3px;
+    font-size: 1em;
+    min-width: 60px;
+    display: inline-block; /* 横スクロール対応を明示 */
+  }
+}

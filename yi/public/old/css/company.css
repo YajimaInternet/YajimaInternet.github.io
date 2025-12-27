@@ -1,0 +1,39 @@
+/* company page specific styles */
+#company-info .company-table-wrapper {
+  overflow: auto;
+}
+
+#company-info .company-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#company-info .company-info-table tr:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+#company-info .company-info-table td {
+  padding: 12px 20px;
+}
+
+#company-info .company-info-table .company-label {
+  width: 35%;
+  font-weight: 600;
+  background-color: #f0f8ff;
+}
+
+#vision .image-wrap {
+  float: left;
+  width: 36%;
+  max-width: 280px;
+  min-width: 160px;
+  margin: 0 20px 20px 0;
+}
+
+#vision .image-wrap img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
