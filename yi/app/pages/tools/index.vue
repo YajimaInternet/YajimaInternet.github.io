@@ -33,6 +33,18 @@ const tools = [
   { name: 'テキストカウンター', to: '/tools/text-metrics', desc: '文字数・行数・バイト数をカウント。' },
   { name: 'パスワードメーカー', to: '/tools/password-lab', desc: 'ランダムなパスワードやUUIDを生成。' },
   { name: 'CSVプレビュー', to: '/tools/csv-viewer', desc: 'CSVを貼り付けてテーブル表示。' },
-  { name: '日付差分チェッカー', to: '/tools/date-helper', desc: '2つの日付差分や日数加算を計算。' }
+  { name: '日付差分チェッカー', to: '/tools/date-helper', desc: '2つの日付差分や日数加算を計算。' },
+  { name: 'JS難読化', to: '/tools/js-obfuscator', desc: 'Base64ラップで簡易難読化。' },
+  { name: 'JSミニファイ', to: '/tools/js-minifier', desc: 'コメント削除と空白圧縮の簡易版。' },
+  { name: 'CSSミニファイ', to: '/tools/css-minifier', desc: 'CSSのコメント削除と圧縮。' },
+  { name: 'HTMLミニファイ', to: '/tools/html-minifier', desc: 'HTMLのコメント削除と空白整理。' },
+  { name: 'ケース変換', to: '/tools/case-converter', desc: 'camel/snake/kebabなどに変換。' },
+  { name: '行ツール', to: '/tools/line-sorter', desc: '行の並べ替え・重複除去・トリム。' },
+  { name: 'Lorem生成', to: '/tools/lorem-ipsum', desc: 'ダミーテキストを手早く生成。' },
+  { name: 'ハッシュ計算', to: '/tools/hash-generator', desc: 'SHA-1/256/384/512を生成。' },
+  { name: 'JSON→CSV', to: '/tools/json-to-csv', desc: '配列JSONをCSVに変換。' },
+  { name: '進数変換', to: '/tools/number-base', desc: '10進/16進/2進を相互変換。' },
+  { name: 'UNIX時間', to: '/tools/unix-time', desc: 'エポック秒と日時の相互変換。' },
+  { name: 'HTMLエンティティ', to: '/tools/html-entities', desc: 'エンコード/デコードを切り替え。' }
 ];
 </script>
