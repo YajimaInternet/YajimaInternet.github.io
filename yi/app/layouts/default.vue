@@ -65,7 +65,7 @@
           <a class="social-btn" href="https://instagram.com/yajimanetworks" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
             <img src="/assets/insta.jpg" alt="Instagram" width="20" height="20">
           </a>
-          <a class="social-btn" href="https://github.com/25c2/YajimaInternet-Next" target="_blank" rel="noopener noreferrer" aria-label="Source code on GitHub">
+          <a class="social-btn" href="https://github.com/YajimaInternet/YajimaInternet.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Source code on GitHub">
             <img src="/assets/github-mark.svg" alt="GitHub" width="20" height="20">
           </a>
         </div>
